@@ -1,5 +1,5 @@
 # 2018Utilities
-# A repository of utility classes for the 2018 FRC Season
+  A repository of utility classes for the 2018 FRC Season
   This project contains several classes created for generic implementation across any future robot project
 # Joystick1038.java 
   defines all the button and joystick inputs of the Logitech joystick and then 
