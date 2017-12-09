@@ -6,6 +6,12 @@ public class CIMCoder {
 	
 	Encoder encoder;
 	
+	public CIMCoder(int channelA, int channelB, int countsPerRevolution, double wheelDiameter)
+	{
+		encoder = new Encoder(channelA, channelB);
+		encoder.setDistancePerPulse(findDistancePerPulse(countsPerRevolution, wheelDiameter));
+	}
+	
 	public CIMCoder(int channelA, int channelB, boolean isInverted, int countsPerRevolution, double wheelDiameter)
 	{
 		encoder = new Encoder(channelA, channelB, isInverted);
