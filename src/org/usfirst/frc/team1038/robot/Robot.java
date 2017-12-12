@@ -1,6 +1,8 @@
 package org.usfirst.frc.team1038.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -16,6 +18,12 @@ public class Robot extends IterativeRobot {
 	final String customAuto = "My Auto";
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
+	
+	final private int leftMotorPort = 0;
+	final private int rightMotorPort = 1;
+	Spark leftMotor = new Spark(leftMotorPort);
+	Spark rightMotor = new Spark(rightMotorPort);
+	RobotDrive drive = new RobotDrive(leftMotor, rightMotor);
 
 	/**
 	 * This function is run when the robot is first started up and should be
