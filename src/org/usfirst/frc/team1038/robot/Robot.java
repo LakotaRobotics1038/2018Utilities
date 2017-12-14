@@ -19,11 +19,27 @@ public class Robot extends IterativeRobot {
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
 	
-	final private int leftMotorPort = 0;
-	final private int rightMotorPort = 1;
-	Spark leftMotor = new Spark(leftMotorPort);
-	Spark rightMotor = new Spark(rightMotorPort);
+	//Robot Motor Code
+	final private int LEFT_MOTOR_PORT = 0;
+	final private int RIGHT_MOTOR_PORT = 1;
+	Spark leftMotor = new Spark(LEFT_MOTOR_PORT);
+	Spark rightMotor = new Spark(RIGHT_MOTOR_PORT);
 	RobotDrive drive = new RobotDrive(leftMotor, rightMotor);
+	
+	//Gyro
+	I2CGyro gyro = new I2CGyro();
+	
+	//Encoders
+	final private int ENCODER_COUNTS_PER_REV = 220;
+	final private double WHEEL_DIAMETER = 6;
+	final private int LEFT_ENCODER_PORT_A = 0;
+	final private int LEFT_ENCODER_PORT_B = 1;
+	final private boolean LEFT_ENCODER_INVERTED = true;
+	final private int RIGHT_ENCODER_PORT_A = 2;
+	final private int RIGHT_ENCODER_PORT_B = 3;
+	final private boolean RIGHT_ENCODER_INVERTED = false;
+	CIMCoder leftEncoder = new CIMCoder(LEFT_ENCODER_PORT_A, LEFT_ENCODER_PORT_B, LEFT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
+	CIMCoder rightEncoder = new CIMCoder(RIGHT_ENCODER_PORT_A, RIGHT_ENCODER_PORT_A, RIGHT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
 
 	/**
 	 * This function is run when the robot is first started up and should be
