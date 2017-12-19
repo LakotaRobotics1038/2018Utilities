@@ -20,8 +20,8 @@ public class Robot extends IterativeRobot {
 	private SendableChooser<String> chooser = new SendableChooser<>();
 	
 	//Robot Motor Code
-	final private int LEFT_MOTOR_PORT = 0;
-	final private int RIGHT_MOTOR_PORT = 1;
+	private final int LEFT_MOTOR_PORT = 0;
+	private final int RIGHT_MOTOR_PORT = 1;
 	private Spark leftMotor = new Spark(LEFT_MOTOR_PORT);
 	private Spark rightMotor = new Spark(RIGHT_MOTOR_PORT);
 	private RobotDrive drive = new RobotDrive(leftMotor, rightMotor);
@@ -30,20 +30,20 @@ public class Robot extends IterativeRobot {
 	private I2CGyro gyro = new I2CGyro();
 	
 	//Encoders
-	final private int ENCODER_COUNTS_PER_REV = 220;
-	final private double WHEEL_DIAMETER = 6;
-	final private int LEFT_ENCODER_PORT_A = 0;
-	final private int LEFT_ENCODER_PORT_B = 1;
-	final private boolean LEFT_ENCODER_INVERTED = true;
-	final private int RIGHT_ENCODER_PORT_A = 2;
-	final private int RIGHT_ENCODER_PORT_B = 3;
-	final private boolean RIGHT_ENCODER_INVERTED = false;
+	private final int ENCODER_COUNTS_PER_REV = 220;
+	private final double WHEEL_DIAMETER = 6;
+	private final int LEFT_ENCODER_PORT_A = 0;
+	private final int LEFT_ENCODER_PORT_B = 1;
+	private final boolean LEFT_ENCODER_INVERTED = true;
+	private final int RIGHT_ENCODER_PORT_A = 2;
+	private final int RIGHT_ENCODER_PORT_B = 3;
+	private final boolean RIGHT_ENCODER_INVERTED = false;
 	private CIMCoder leftEncoder = new CIMCoder(LEFT_ENCODER_PORT_A, LEFT_ENCODER_PORT_B, LEFT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
 	private CIMCoder rightEncoder = new CIMCoder(RIGHT_ENCODER_PORT_A, RIGHT_ENCODER_PORT_B, RIGHT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
 
 	//Teleop
-	Driver driver;
-	Joystick1038 driverJoystick = new Joystick1038(0);
+	private Driver driver;
+	private Joystick1038 driverJoystick = new Joystick1038(0);
 	
 	/**
 	 * This function is run when the robot is first started up and should be
