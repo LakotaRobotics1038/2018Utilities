@@ -16,7 +16,7 @@ public class I2CGyro {
 	private final int NORMAL_MEASUREMENT_MODE = 0x00;
 	private final int GYRO_RECALIBRATE = 0x4E;
 	private final int RESET_Z_AXIS_INTEGRATOR = 0x52;
-	I2C I2CBus;
+	private I2C I2CBus;
 	
 	//Class constructor
 	public I2CGyro()

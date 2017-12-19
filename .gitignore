@@ -9,7 +9,6 @@
 
 # Eclipse files
 .classpath
-.project
 build.properties
 build.xml
 

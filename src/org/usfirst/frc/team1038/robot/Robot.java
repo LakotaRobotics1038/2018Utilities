@@ -41,6 +41,10 @@ public class Robot extends IterativeRobot {
 	private CIMCoder leftEncoder = new CIMCoder(LEFT_ENCODER_PORT_A, LEFT_ENCODER_PORT_B, LEFT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
 	private CIMCoder rightEncoder = new CIMCoder(RIGHT_ENCODER_PORT_A, RIGHT_ENCODER_PORT_B, RIGHT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
 
+	//Teleop
+	Driver driver;
+	Joystick1038 driverJoystick = new Joystick1038(0);
+	
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -87,11 +91,20 @@ public class Robot extends IterativeRobot {
 		}
 	}
 
+	@Override
+	public void teleopInit() {
+		driver = new Driver(driverJoystick, drive);
+	}
+	
 	/**
 	 * This function is called periodically during operator control
 	 */
 	@Override
 	public void teleopPeriodic() {
+		driver.drive();
+		if (driverJoystick.getStartButton())
+			driver.driveSelector();
+		
 	}
 
 	/**
