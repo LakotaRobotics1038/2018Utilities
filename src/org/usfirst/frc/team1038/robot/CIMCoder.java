@@ -4,7 +4,12 @@ import edu.wpi.first.wpilibj.Encoder;
 
 public class CIMCoder {
 	
-	Encoder encoder;
+	private Encoder encoder;
+	
+	public CIMCoder(int channelA, int channelB, boolean isInverted)
+	{
+		encoder = new Encoder(channelA, channelB, isInverted);
+	}
 	
 	public CIMCoder(int channelA, int channelB, int countsPerRevolution, double wheelDiameter)
 	{

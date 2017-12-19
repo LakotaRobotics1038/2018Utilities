@@ -14,20 +14,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
-	final String defaultAuto = "Default";
-	final String customAuto = "My Auto";
-	String autoSelected;
-	SendableChooser<String> chooser = new SendableChooser<>();
+	private final String defaultAuto = "Default";
+	private final String customAuto = "My Auto";
+	private String autoSelected;
+	private SendableChooser<String> chooser = new SendableChooser<>();
 	
 	//Robot Motor Code
 	final private int LEFT_MOTOR_PORT = 0;
 	final private int RIGHT_MOTOR_PORT = 1;
-	Spark leftMotor = new Spark(LEFT_MOTOR_PORT);
-	Spark rightMotor = new Spark(RIGHT_MOTOR_PORT);
-	RobotDrive drive = new RobotDrive(leftMotor, rightMotor);
+	private Spark leftMotor = new Spark(LEFT_MOTOR_PORT);
+	private Spark rightMotor = new Spark(RIGHT_MOTOR_PORT);
+	private RobotDrive drive = new RobotDrive(leftMotor, rightMotor);
 	
 	//Gyro
-	I2CGyro gyro = new I2CGyro();
+	private I2CGyro gyro = new I2CGyro();
 	
 	//Encoders
 	final private int ENCODER_COUNTS_PER_REV = 220;
@@ -38,8 +38,8 @@ public class Robot extends IterativeRobot {
 	final private int RIGHT_ENCODER_PORT_A = 2;
 	final private int RIGHT_ENCODER_PORT_B = 3;
 	final private boolean RIGHT_ENCODER_INVERTED = false;
-	CIMCoder leftEncoder = new CIMCoder(LEFT_ENCODER_PORT_A, LEFT_ENCODER_PORT_B, LEFT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
-	CIMCoder rightEncoder = new CIMCoder(RIGHT_ENCODER_PORT_A, RIGHT_ENCODER_PORT_A, RIGHT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
+	private CIMCoder leftEncoder = new CIMCoder(LEFT_ENCODER_PORT_A, LEFT_ENCODER_PORT_B, LEFT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
+	private CIMCoder rightEncoder = new CIMCoder(RIGHT_ENCODER_PORT_A, RIGHT_ENCODER_PORT_B, RIGHT_ENCODER_INVERTED, ENCODER_COUNTS_PER_REV, WHEEL_DIAMETER);
 
 	/**
 	 * This function is run when the robot is first started up and should be

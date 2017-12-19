@@ -24,7 +24,7 @@ public class Joystick1038 {
 	private final int RIGHT_STICK_VERTICAL = 2;
 	private final int RIGHT_STICK_HORIZONTAL = 3;
 	
-	Joystick joystick;
+	private Joystick joystick;
 	
 	public Joystick1038(int port)
 	{
